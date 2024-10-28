@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.HuacaixuanzeDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.HuacaixuanzeEntity" id="huacaixuanzeMap">
+        <result property="huacaixuanze" column="huacaixuanze"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.HuacaixuanzeVO" >
+		SELECT * FROM huacaixuanze  huacaixuanze         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.HuacaixuanzeVO" >
+		SELECT  huacaixuanze.* FROM huacaixuanze  huacaixuanze
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.HuacaixuanzeView" >
+
+		SELECT  huacaixuanze.* FROM huacaixuanze  huacaixuanze 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.HuacaixuanzeView" >
+		SELECT * FROM huacaixuanze  huacaixuanze <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
